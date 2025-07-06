@@ -1,0 +1,79 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="DevExpress.Win.BonusSkins" Version="24.2.3" />
+    <PackageReference Include="DevExpress.Win.Design" Version="24.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DSoft Restaurant.Core\DSoft Restaurant.Core.csproj" />
+    <ProjectReference Include="..\DSoft Restaurant.Data\DSoft Restaurant.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="GUI\Home\Box\FRMDetailsBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Home\Box\FRMListBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Home\DeliveryCompany\FRMDetailsDeliverCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Home\DeliveryCompany\FRMListDeliveryCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Home\Employees\FRMDetailsDeliveryEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Home\Employees\FRMListDeliveryEmployees.cs" />
+    <Compile Update="GUI\Home\Expenses\FRMDetailsExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Home\Expenses\FRMGroupExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Home\Offers\FRMDetailsOffers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Home\Offers\FRMListOffers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
