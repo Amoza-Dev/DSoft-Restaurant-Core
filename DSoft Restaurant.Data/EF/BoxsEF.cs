@@ -8,21 +8,21 @@ using System.Threading.Tasks;
 
 namespace DSoft_Restaurant.Data.EF
 {
-    public class ExpensesEF : IDataHelper<TBExpenses>
+    public class BoxsEF : IDataHelper<TBBoxs>
     {
         private AppDBContext context;
-        private TBExpenses Expenses;
-        public ExpensesEF()
+        private TBBoxs boxs;
+        public BoxsEF()
         {
-            context = new AppDBContext();   
-            Expenses = new TBExpenses();
+            context =new AppDBContext();
+            boxs = new TBBoxs();    
         }
 
-        public string Add(TBExpenses table)
+        public string Add(TBBoxs table)
         {
             try
             {
-                context.Expenses.Add(table);
+                context.Boxs.Add(table);
                 context.SaveChanges();
                 return "1";
             }
@@ -36,8 +36,8 @@ namespace DSoft_Restaurant.Data.EF
         {
             try
             {
-                Expenses = Find(id);
-                context.Expenses.Remove(Expenses);
+                boxs = Find(id);
+                context.Boxs.Remove(boxs);
                 context.SaveChanges();
                 return "1";
             }
@@ -47,31 +47,31 @@ namespace DSoft_Restaurant.Data.EF
             }
         }
 
-        public TBExpenses Find(int id)
+        public TBBoxs Find(int id)
         {
             try
             {
-                return context.Expenses.Find(id) ?? new TBExpenses();
+                return context.Boxs.Find(id) ?? new TBBoxs();
             }
             catch (Exception)
             {
-                return new TBExpenses();
+                return new TBBoxs();
             }
         }
 
-        public List<TBExpenses> GetAll()
+        public List<TBBoxs> GetAll()
         {
             try
             {
-                return context.Expenses.Include(x => x.TBGroupExpenses).Where(x => !x.IsDelete).ToList();
+                return context.Boxs.Where(x => !x.IsDelete).ToList();
             }
             catch (Exception)
             {
-                return new List<TBExpenses>();
+                return new List<TBBoxs>();
             }
         }
 
-        public List<TBExpenses> GetAllByUserId(int userId)
+        public List<TBBoxs> GetAllByUserId(int userId)
         {
             throw new NotImplementedException();
         }
@@ -81,22 +81,22 @@ namespace DSoft_Restaurant.Data.EF
             return context.Database.CanConnect();
         }
 
-        public List<TBExpenses> SearchAll(string search)
+        public List<TBBoxs> SearchAll(string search)
         {
             throw new NotImplementedException();
         }
 
-        public List<TBExpenses> SearchAllByUserId(int userId, string search)
+        public List<TBBoxs> SearchAllByUserId(int userId, string search)
         {
             throw new NotImplementedException();
         }
 
-        public string Update(TBExpenses table)
+        public string Update(TBBoxs table)
         {
             try
             {
                 context = new AppDBContext();
-                context.Expenses.Update(table);
+                context.Boxs.Update(table);
                 context.SaveChanges();
                 return "1";
             }

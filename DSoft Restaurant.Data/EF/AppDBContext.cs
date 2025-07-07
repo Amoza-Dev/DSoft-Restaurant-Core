@@ -26,6 +26,7 @@ namespace DSoft_Restaurant.Data.EF
         public DbSet<TBDeliveryCompany> DeliveryCompany { get; set; }
         public DbSet<TBItemDeliveryPrice> ItemDeliveryPrices { get; set; }
         public DbSet<TBCategory> Categoroy { get; set; }
+        public DbSet<TBBoxs> Boxs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
