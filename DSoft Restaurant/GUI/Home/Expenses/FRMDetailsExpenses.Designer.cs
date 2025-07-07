@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMDetailsExpenses));
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            CBTableZone = new DevExpress.XtraEditors.SearchLookUpEdit();
+            CBGroupExpenses = new DevExpress.XtraEditors.SearchLookUpEdit();
             searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            TxtTableName = new DevExpress.XtraEditors.TextEdit();
+            TxtExpenseName = new DevExpress.XtraEditors.TextEdit();
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             labelControl5 = new DevExpress.XtraEditors.LabelControl();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -40,9 +40,9 @@
             ButNew = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)CBTableZone.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CBGroupExpenses.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)searchLookUpEdit1View).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)TxtTableName.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TxtExpenseName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             SuspendLayout();
@@ -51,8 +51,8 @@
             // 
             groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Rabar_021", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             groupControl1.AppearanceCaption.Options.UseFont = true;
-            groupControl1.Controls.Add(CBTableZone);
-            groupControl1.Controls.Add(TxtTableName);
+            groupControl1.Controls.Add(CBGroupExpenses);
+            groupControl1.Controls.Add(TxtExpenseName);
             groupControl1.Controls.Add(labelControl2);
             groupControl1.Controls.Add(labelControl5);
             groupControl1.Controls.Add(panelControl1);
@@ -64,15 +64,15 @@
             groupControl1.Text = "زانیاری خەرجی";
             groupControl1.Paint += groupControl1_Paint;
             // 
-            // CBTableZone
+            // CBGroupExpenses
             // 
-            CBTableZone.Location = new System.Drawing.Point(173, 90);
-            CBTableZone.Name = "CBTableZone";
-            CBTableZone.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            CBTableZone.Properties.NullText = "";
-            CBTableZone.Properties.PopupView = searchLookUpEdit1View;
-            CBTableZone.Size = new System.Drawing.Size(210, 32);
-            CBTableZone.TabIndex = 39;
+            CBGroupExpenses.Location = new System.Drawing.Point(173, 90);
+            CBGroupExpenses.Name = "CBGroupExpenses";
+            CBGroupExpenses.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            CBGroupExpenses.Properties.NullText = "";
+            CBGroupExpenses.Properties.PopupView = searchLookUpEdit1View;
+            CBGroupExpenses.Size = new System.Drawing.Size(210, 32);
+            CBGroupExpenses.TabIndex = 39;
             // 
             // searchLookUpEdit1View
             // 
@@ -81,12 +81,12 @@
             searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // TxtTableName
+            // TxtExpenseName
             // 
-            TxtTableName.Location = new System.Drawing.Point(71, 45);
-            TxtTableName.Name = "TxtTableName";
-            TxtTableName.Size = new System.Drawing.Size(312, 32);
-            TxtTableName.TabIndex = 37;
+            TxtExpenseName.Location = new System.Drawing.Point(71, 45);
+            TxtExpenseName.Name = "TxtExpenseName";
+            TxtExpenseName.Size = new System.Drawing.Size(312, 32);
+            TxtExpenseName.TabIndex = 37;
             // 
             // labelControl2
             // 
@@ -133,6 +133,7 @@
             ButSave.Size = new System.Drawing.Size(100, 45);
             ButSave.TabIndex = 7;
             ButSave.Text = "تۆمارکردن";
+            ButSave.Click += ButSave_Click;
             // 
             // ButNew
             // 
@@ -153,6 +154,7 @@
             ButNew.Size = new System.Drawing.Size(100, 45);
             ButNew.TabIndex = 6;
             ButNew.Text = "نوێ";
+            ButNew.Click += ButNew_Click;
             // 
             // FRMDetailsExpenses
             // 
@@ -166,12 +168,13 @@
             Name = "FRMDetailsExpenses";
             RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Load += FRMDetailsExpenses_Load;
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)CBTableZone.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CBGroupExpenses.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)searchLookUpEdit1View).EndInit();
-            ((System.ComponentModel.ISupportInitialize)TxtTableName.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TxtExpenseName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
             ResumeLayout(false);
@@ -183,9 +186,9 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton ButSave;
         private DevExpress.XtraEditors.SimpleButton ButNew;
-        private DevExpress.XtraEditors.SearchLookUpEdit CBTableZone;
+        private DevExpress.XtraEditors.SearchLookUpEdit CBGroupExpenses;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
-        private DevExpress.XtraEditors.TextEdit TxtTableName;
+        private DevExpress.XtraEditors.TextEdit TxtExpenseName;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl5;
     }

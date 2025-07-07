@@ -448,10 +448,10 @@
             // 
             // ribbonStatusBar1
             // 
-            ribbonStatusBar1.Location = new System.Drawing.Point(1, 417);
+            ribbonStatusBar1.Location = new System.Drawing.Point(1, 422);
             ribbonStatusBar1.Name = "ribbonStatusBar1";
             ribbonStatusBar1.Ribbon = ribbonControl1;
-            ribbonStatusBar1.Size = new System.Drawing.Size(1113, 32);
+            ribbonStatusBar1.Size = new System.Drawing.Size(1113, 27);
             // 
             // xtraTabControl1
             // 
